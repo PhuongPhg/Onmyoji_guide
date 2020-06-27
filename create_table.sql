@@ -20,6 +20,16 @@ CREATE TABLE IF NOT EXISTS wanted_quest(
     FOREIGN KEY(id_char) REFERENCES characters(id)
 );
 -- ALTER TABLE wanted_quest ADD FOREIGN KEY(id_char) REFERENCES characters(id);
+
+CREATE TABLE IF NOT EXISTS soul(
+    id INT,
+    soul_name VARCHAR(15),
+    combo_2 VARCHAR(50),
+    combo_4 VARCHAR(50),
+    PRIMARY KEY(id)
+    -- FOREIGN KEY(id) REFERENCES guide(id_soul)
+);
+
 CREATE TABLE IF NOT EXISTS guide(
     id_char INT,
     role_char VARCHAR(15),
@@ -28,15 +38,8 @@ CREATE TABLE IF NOT EXISTS guide(
     soul_2 VARCHAR(11),
     soul_4 VARCHAR(11),
     soul_6 VARCHAR(11),
-    PRIMARY KEY(id_char),
-    PRIMARY KEY (id_soul),
-    FOREIGN KEY(id_char) REFERENCES characters(id)
-);
-CREATE TABLE IF NOT EXISTS soul(
-    id_soul INT PRIMARY KEY,
-    soul_name VARCHAR(15),
-    combo_2 VARCHAR(50),
-    combo_4 VARCHAR(50),
-    -- PRIMARY KEY(id),
-    FOREIGN KEY(id_soul) REFERENCES guide(id_soul)
+    PRIMARY KEY(id_char, id_soul),
+    -- PRIMARY KEY (id_soul),
+    FOREIGN KEY(id_char) REFERENCES characters(id),
+    FOREIGN KEY(id_soul) REFERENCES soul(id)
 );
