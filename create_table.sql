@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS characters(
 );
 CREATE TABLE IF NOT EXISTS wanted_quest(
     id_char INT NOT NULL,
-    place VARCHAR(11),
+    place VARCHAR(70),
     no_yokai INT,
     PRIMARY KEY(id_char, place),
     FOREIGN KEY(id_char) REFERENCES characters(id)
