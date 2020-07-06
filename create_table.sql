@@ -3,6 +3,7 @@ CREATE DATABASE IF NOT EXISTS onmyoji;
 USE onmyoji
 
 -- SET sql_notes = 0
+
 CREATE TABLE IF NOT EXISTS characters(
     id INT(11) NOT NULL AUTO_INCREMENT,
     characters_name VARCHAR(20),
