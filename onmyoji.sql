@@ -27,16 +27,16 @@ SET time_zone = "+00:00";
 -- Table structure for table `characters`
 --
 
-CREATE TABLE `characters` (
-  `id` int(11) NOT NULL,
-  `characters_name` varchar(20) DEFAULT NULL,
-  `appearance` varchar(50) DEFAULT NULL,
-  `rare` varchar(6) DEFAULT NULL,
-  `skill_1` varchar(15) DEFAULT NULL,
-  `skill_2` varchar(15) DEFAULT NULL,
-  `skill_3` varchar(15) DEFAULT NULL,
-  `skill_4` varchar(15) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+-- CREATE TABLE `characters` (
+--   `id` int(11) NOT NULL,
+--   `characters_name` varchar(20) DEFAULT NULL,
+--   `appearance` varchar(50) DEFAULT NULL,
+--   `rare` varchar(6) DEFAULT NULL,
+--   `skill_1` varchar(15) DEFAULT NULL,
+--   `skill_2` varchar(15) DEFAULT NULL,
+--   `skill_3` varchar(15) DEFAULT NULL,
+--   `skill_4` varchar(15) DEFAULT NULL
+-- ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `characters`
@@ -198,15 +198,24 @@ INSERT INTO `characters` (`id`, `characters_name`, `appearance`, `rare`, `skill_
 -- Table structure for table `guide`
 --
 
-CREATE TABLE `guide` (
-  `id_char` int(11) NOT NULL,
-  `role_char` varchar(15) DEFAULT NULL,
-  `id_soul` int(11) NOT NULL,
-  `soul_name` varchar(15) DEFAULT NULL,
-  `soul_2` varchar(11) DEFAULT NULL,
-  `soul_4` varchar(11) DEFAULT NULL,
-  `soul_6` varchar(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+-- CREATE TABLE `guide` (
+--   `id_char` int(11) NOT NULL,
+--   `role_char` varchar(15) DEFAULT NULL,
+--   `id_soul` int(11) NOT NULL,
+--   `soul_name` varchar(15) DEFAULT NULL,
+--   `soul_2` varchar(11) DEFAULT NULL,
+--   `soul_4` varchar(11) DEFAULT NULL,
+--   `soul_6` varchar(11) DEFAULT NULL
+-- ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Dumping data for table `guide`
+--
+
+-- INSERT INTO `guide` (`id_char`, `name_char`, `role_char`, `id_soul`, `soul_name`, `soul_2`, `soul_4`, `soul_6`) VALUES
+-- ()
 
 -- --------------------------------------------------------
 
@@ -214,62 +223,63 @@ CREATE TABLE `guide` (
 -- Table structure for table `soul`
 --
 
-CREATE TABLE `soul` (
-  `id` int(11) NOT NULL,
-  `soul_name` varchar(20) DEFAULT NULL,
-  `combo_2` varchar(150) DEFAULT NULL,
-  `combo_4` varchar(350) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+-- CREATE TABLE `soul` (
+--   `id` int(11) NOT NULL,
+--   `soul_name` varchar(20) DEFAULT NULL,
+--   `soul_type` VARCHAR(20) DEFAULT NULL,
+--   `combo_1` VARCHAR (150) DEFAULT NULL,
+--   `combo_2` varchar(150) DEFAULT NULL,
+--   `combo_4` varchar(350) DEFAULT NULL
+-- ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `soul`
 --
 
-INSERT INTO `soul` (`id`, `soul_name`, `combo_2`, `combo_4`) VALUES
-(1, 'Senecio  ', 'Effect RES +15%', '25% chance (-60% on taunted targets) to inflict a random dazing effect on target upon receiving damage; Multi-damage only triggers once'),
-(2, 'Soul Edge  ', 'HP + 15%', '50% chance to decrease 20% of one ST damage to an ally, plus share 50% of the damage'),
-(3, 'Tree Nymph  ', 'Def +30%', '25% chance (-60% on taunted targets) to remove 1 orb when an ally receives damage; Multi-damage only triggers once'),
-(4, 'Dice Sprite  ', 'Effect RES +15%', 'When resist activates, RT normal attack w/ +50% damage'),
-(5, 'Mimic  ', 'Effect RES +15%', '25% chance (+ Effect HIT) to inflict a random debuff on target upon inflicting damage'),
-(6, 'Sea Spirite  ', 'Effect HIT +15%', 'Produces a shield at the start of battle that lasts 1 turn.  The shield lets all allies absorb damage equal to 10% of their HP'),
-(7, 'Azure Basan  ', 'Effect HIT +15%', '3 additional orb at start of each battle'),
-(8, 'Jizo Statue  ', 'HP + 15%', 'Upon receiving critical damage, generate a shield that absorb damage equal to 10% of max HP; 30% chance to cast shields on other team members; reduce 60% proc chance when attacked by provoked enemies'),
-(9, 'Holy Flame  ', 'HP + 15%', 'If HP is less than 30% at the end of a turn, restores HP by 15%'),
-(10, 'Boroboroton  ', 'HP + 15%', 'Damage taken decreases by 30%'),
-(11, 'Mirror Lady  ', 'HP + 15%', '30% chance to reflect 100% of damage received; reduce 60% proc chance when attacked by provoked enemies'),
-(12, 'Priestess  ', 'HP + 15%', '8% chance to inflict Daze (stun) upon damaging target'),
-(13, 'Tree Spirit  ', 'HP + 15%', 'Increases all healing effects by 20%'),
-(14, 'Fenikkusu  ', 'Critical % + 15%', 'Recover HP by 15% and increase ATK by 15% upon defeating an enemy'),
-(15, 'Tomb Guard  ', 'Critical % + 15%', 'Gain 0.6% Crit DMG for every 1% HP lost'),
-(16, 'Seductress  ', 'Critical % + 15%', 'When inflicting critical damage, 40% chance to deal damage equal to 10% of the target\'s max HP; max damage dealt is 120% of own ATK;  Seductress can benefit from arena buffs but not other buffs.'),
-(17, 'Shamisen  ', 'Critical % + 15%', 'Increases SPD of controlled allies by 30 (including self)'),
-(18, 'Claws  ', 'Critical % + 15%', 'Critical DMG ignores 20% of target\'s DEF'),
-(19, 'Shadow  ', 'Critical % + 15%', 'Deals an extra 40% damage against units with more than 70% HP'),
-(20, 'Pearl  ', 'Def +30%', 'When healing allies, casts a shield that absorbs damage equal to 25% f the HP healed.  The shield lasts 1 turn.'),
-(21, 'Temptress  ', 'Def +30%', 'Grants a 25% (+ Effect HIT) chance of inflicting Confuse on the target when dealing damage'),
-(22, 'Snow Spirit  ', 'Def +30%', 'Grants a 12% (+ Effect HIT) chance of inflicting Freeze on the target when dealing damage'),
-(23, 'Fortune Cat  ', 'Def +30%', 'Grants a 50% chance of gaining 2 orbs at the start of a turn'),
-(24, 'Shy Soul  ', 'Def +30%', 'Grants a 20% (+ Effect HIT) chance of inflicting Sleep on the target for 1 turn when dealing damage'),
-(25, 'Dawn Fairy  ', 'Def +30%', 'Grants 20% chance (increased by 10% when target has a buff) to delay target\'s move bar by 30% when dealing damage'),
-(26, 'Nightwing  ', 'Attack +15%', 'Converts 20% of damage dealt into HP'),
-(27, 'Soultaker  ', 'Attack +15%', 'Grants 20% chanc of gaining 1 extra move after performing an action'),
-(28, 'Scarlet  ', 'Attack +15%', '35% to counter with normal attack upon receiving damage; reduce 60% proc chance when attacked by provoked enemies'),
-(29, 'House Imp  ', 'Attack +15%', 'Deal additional 30% damage when the target is in a controlled state (frozen, stun, sleep, etc)'),
-(30, 'Watcher  ', 'Attack +15%', 'Deal 50% more damage on enemie withs less than 30% hp'),
-(31, 'Harpy  ', 'Attack +15%', 'Gain 3 orbs upon defeating an enemy'),
-(32, 'Kyoukotsu  ', 'Attack +15%', 'Grants an extra 8% damage for each orb in your possession when you deal damage'),
-(33, 'Yamabiko  ', 'Effect RES +15%', 'Grants a 50% chance of reflecting a controlling effect (Daze, Silence, Freeze, Confuse, Morph, Taunt, and Sleep) back to the enemy'),
-(34, 'Odokuro  ', '1-set: Random Stat 8% (DEF bonus 16%, except SPD and Crit DMG)', '2-set Unique Passive: Increase damage to monsters by 10%.  If received damage before this round\'s action, effect increase to 25%'),
-(35, 'Namazu  ', '1-set: Random Stat 8% (DEF bonus 16%, except SPD and Crit DMG)', '2-set Unique Passive: Grants 60% damage reduction against monsters\' attacks.  Each attack taken will transfer 6% of damage reduction to 1.5% damage bonus (Multiple attacks only trigger once)'),
-(36, 'Tsuchigumo  ', 'Random Stat 8% (DEF bonus 16%, except SPD and Crit DMG)', '2-set Unique Passive: Attacking monsters inflicts a Poison mark (3 layers max) on them that reduces their SPD by 10% and inflicts 25% of total damage received at the end of their turns.'),
-(37, 'Oboroguruma  ', '1-set: Random Stat 8% (DEF bonus 16%, except SPD and Crit DMG)', '2-set Unique Passive: Grants a 50% chance of raising the Move Bar by 30% when attacked by monsters (Multiple attacks only trigger once)'),
-(38, 'Shinkirou  ', '1-set: Random Stat 8% (DEF bonus 16%, except SPD and Crit DMG)', '2-set Unique Passive: Creates a shield that negates any monster controlling effects (Daze, Silence, Frozen, Confuse, etc.) once.  Regenerates in 5 turns.'),
-(39, 'Hyosube', 'Attack +15%', 'When the turn ends, gain a Piercing Arrow (buff, status) stack,  stacking up to 3 times. When dealing damage each stack reduces the DEF of the targets by 75		'),
-(40, 'Aonyobo', ' +15% critical', 'When taking leathal damage for the first time, removes all buffs and debuffs, recoveres HP by 100% and inflicts frozen on self for 1 turn.  When under Frozen, DEF is increased by 100% and gains immunity to all debuffs.  If survived the Frozen, recovers HP by 100% again. Triggers only once each round.		'),
-(41, 'Enshyoujo', ' +15% effect hit', 'When inflicting debuffs, ignores target\'s overall Effect RES by 30%'),
-(42, 'Nuribotoke', ' +15% HP', 'Effective exclusively.  Increases the Effect RES and damage of all allies by 15% (doubled for the equipped unit) at the end of a turn if the equipped unit launched a normal attack or was unable to take actions in the turn.  Sustainable for 2 turns.'),
-(43, 'Ghostly Songstress', '1-set: Random Stat 8% (DEF bonus 16%, except SPD and Crit DMG)', '2 set Exclusive effect.  After dealing damage to a monster 5 times, the next attack to a monster inflicts damage equal to 20% of it\'s max HP, ignoring it\'s DEF, to a max of 255% of own ATK.'),
-(44, 'Cyan Imp  ', 'NA', 'NA');
+INSERT INTO `soul` (`id`, `soul_name`, `soul_type`, `combo_1`, `combo_2`, `combo_4`) VALUES
+(1, 'Senecio  ', 'normal', NULL, 'Effect RES +15%', '25% chance (-60% on taunted targets) to inflict a random dazing effect on target upon receiving damage; Multi-damage only triggers once'),
+(2, 'Soul Edge  ', 'normal', NULL, 'HP + 15%', '50% chance to decrease 20% of one ST damage to an ally, plus share 50% of the damage'),
+(3, 'Tree Nymph  ', 'normal', NULL, 'Def +30%', '25% chance (-60% on taunted targets) to remove 1 orb when an ally receives damage; Multi-damage only triggers once'),
+(4, 'Dice Sprite  ', 'normal', NULL, 'Effect RES +15%', 'When resist activates, RT normal attack w/ +50% damage'),
+(5, 'Mimic  ', 'normal', NULL, 'Effect RES +15%', '25% chance (+ Effect HIT) to inflict a random debuff on target upon inflicting damage'),
+(6, 'Sea Spirite  ', 'normal', NULL, 'Effect HIT +15%', 'Produces a shield at the start of battle that lasts 1 turn.  The shield lets all allies absorb damage equal to 10% of their HP'),
+(7, 'Azure Basan  ', 'normal', NULL, 'Effect HIT +15%', '3 additional orb at start of each battle'),
+(8, 'Jizo Statue  ', 'normal', NULL, 'HP + 15%', 'Upon receiving critical damage, generate a shield that absorb damage equal to 10% of max HP; 30% chance to cast shields on other team members; reduce 60% proc chance when attacked by provoked enemies'),
+(9, 'Holy Flame  ', 'normal', NULL, 'HP + 15%', 'If HP is less than 30% at the end of a turn, restores HP by 15%'),
+(10, 'Boroboroton  ', 'normal', NULL, 'HP + 15%', 'Damage taken decreases by 30%'),
+(11, 'Mirror Lady  ', 'normal', NULL, 'HP + 15%', '30% chance to reflect 100% of damage received; reduce 60% proc chance when attacked by provoked enemies'),
+(12, 'Priestess  ', 'normal', NULL, 'HP + 15%', '8% chance to inflict Daze (stun) upon damaging target'),
+(13, 'Tree Spirit  ', 'normal', NULL, 'HP + 15%', 'Increases all healing effects by 20%'),
+(14, 'Fenikkusu  ', 'normal', NULL, 'Critical % + 15%', 'Recover HP by 15% and increase ATK by 15% upon defeating an enemy'),
+(15, 'Tomb Guard  ', 'normal', NULL, 'Critical % + 15%', 'Gain 0.6% Crit DMG for every 1% HP lost'),
+(16, 'Seductress  ', 'normal', NULL, 'Critical % + 15%', 'When inflicting critical damage, 40% chance to deal damage equal to 10% of the target\'s max HP; max damage dealt is 120% of own ATK;  Seductress can benefit from arena buffs but not other buffs.'),
+(17, 'Shamisen  ', 'normal', NULL, 'Critical % + 15%', 'Increases SPD of controlled allies by 30 (including self)'),
+(18, 'Claws  ', 'normal', NULL, 'Critical % + 15%', 'Critical DMG ignores 20% of target\'s DEF'),
+(19, 'Shadow  ', 'normal', NULL, 'Critical % + 15%', 'Deals an extra 40% damage against units with more than 70% HP'),
+(20, 'Pearl  ', 'normal', NULL, 'Def +30%', 'When healing allies, casts a shield that absorbs damage equal to 25% f the HP healed.  The shield lasts 1 turn.'),
+(21, 'Temptress  ', 'normal', NULL, 'Def +30%', 'Grants a 25% (+ Effect HIT) chance of inflicting Confuse on the target when dealing damage'),
+(22, 'Snow Spirit  ', 'normal', NULL, 'Def +30%', 'Grants a 12% (+ Effect HIT) chance of inflicting Freeze on the target when dealing damage'),
+(23, 'Fortune Cat  ', 'normal', NULL, 'Def +30%', 'Grants a 50% chance of gaining 2 orbs at the start of a turn'),
+(24, 'Shy Soul  ', 'normal', NULL, 'Def +30%', 'Grants a 20% (+ Effect HIT) chance of inflicting Sleep on the target for 1 turn when dealing damage'),
+(25, 'Dawn Fairy  ', 'normal', NULL, 'Def +30%', 'Grants 20% chance (increased by 10% when target has a buff) to delay target\'s move bar by 30% when dealing damage'),
+(26, 'Nightwing  ', 'normal', NULL, 'Attack +15%', 'Converts 20% of damage dealt into HP'),
+(27, 'Soultaker  ', 'normal', NULL, 'Attack +15%', 'Grants 20% chanc of gaining 1 extra move after performing an action'),
+(28, 'Scarlet  ', 'normal', NULL, 'Attack +15%', '35% to counter with normal attack upon receiving damage; reduce 60% proc chance when attacked by provoked enemies'),
+(29, 'House Imp  ', 'normal', NULL, 'Attack +15%', 'Deal additional 30% damage when the target is in a controlled state (frozen, stun, sleep, etc)'),
+(30, 'Watcher  ', 'normal', NULL, 'Attack +15%', 'Deal 50% more damage on enemie withs less than 30% hp'),
+(31, 'Harpy  ', 'normal', NULL, 'Attack +15%', 'Gain 3 orbs upon defeating an enemy'),
+(32, 'Kyoukotsu  ', 'normal', NULL, 'Attack +15%', 'Grants an extra 8% damage for each orb in your possession when you deal damage'),
+(33, 'Yamabiko  ', 'normal', NULL, 'Effect RES +15%', 'Grants a 50% chance of reflecting a controlling effect (Daze, Silence, Freeze, Confuse, Morph, Taunt, and Sleep) back to the enemy'),
+(34, 'Odokuro  ', 'boss', 'Random Stat 8% (DEF bonus 16%, except SPD and Crit DMG)', 'Increase damage to monsters by 10%.  If received damage before this round\'s action, effect increase to 25%', NULL),
+(35, 'Namazu  ', 'boss', 'Random Stat 8% (DEF bonus 16%, except SPD and Crit DMG)', 'Grants 60% damage reduction against monsters\' attacks.  Each attack taken will transfer 6% of damage reduction to 1.5% damage bonus (Multiple attacks only trigger once)', NULL),
+(36, 'Tsuchigumo  ', 'boss', 'Random Stat 8% (DEF bonus 16%, except SPD and Crit DMG)', 'Attacking monsters inflicts a Poison mark (3 layers max) on them that reduces their SPD by 10% and inflicts 25% of total damage received at the end of their turns.', NULL),
+(37, 'Oboroguruma  ', 'boss', 'Random Stat 8% (DEF bonus 16%, except SPD and Crit DMG)', 'Grants a 50% chance of raising the Move Bar by 30% when attacked by monsters (Multiple attacks only trigger once)', NULL),
+(38, 'Shinkirou  ', 'boss', 'Random Stat 8% (DEF bonus 16%, except SPD and Crit DMG)', 'Creates a shield that negates any monster controlling effects (Daze, Silence, Frozen, Confuse, etc.) once.  Regenerates in 5 turns.', NULL),
+(39, 'Hyosube', 'normal', NULL, 'Attack +15%', 'When the turn ends, gain a Piercing Arrow (buff, status) stack,  stacking up to 3 times. When dealing damage each stack reduces the DEF of the targets by 75		'),
+(40, 'Aonyobo', 'normal', NULL, 'Critical % + 15%', 'When taking leathal damage for the first time, removes all buffs and debuffs, recoveres HP by 100% and inflicts frozen on self for 1 turn.  When under Frozen, DEF is increased by 100% and gains immunity to all debuffs.  If survived the Frozen, recovers HP by 100% again. Triggers only once each round.'),
+(41, 'Enshyoujo', 'normal', NULL, 'Effect HIT +15%', 'When inflicting debuffs, ignores target\'s overall Effect RES by 30%'),
+(42, 'Nuribotoke', 'normal', NULL, 'HP + 15%', 'Effective exclusively.  Increases the Effect RES and damage of all allies by 15% (doubled for the equipped unit) at the end of a turn if the equipped unit launched a normal attack or was unable to take actions in the turn.  Sustainable for 2 turns.'),
+(43, 'Ghostly Songstress', 'boss', 'Random Stat 8% (DEF bonus 16%, except SPD and Crit DMG)', 'After dealing damage to a monster 5 times, the next attack to a monster inflicts damage equal to 20% of it\'s max HP, ignoring it\'s DEF, to a max of 255% of own ATK.', NULL);
 
 -- --------------------------------------------------------
 
@@ -277,11 +287,11 @@ INSERT INTO `soul` (`id`, `soul_name`, `combo_2`, `combo_4`) VALUES
 -- Table structure for table `wanted_quest`
 --
 
-CREATE TABLE `wanted_quest` (
-  `id_char` int(11) NOT NULL,
-  `place` varchar(70) NOT NULL,
-  `no_yokai` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+-- CREATE TABLE `wanted_quest` (
+--   `id_char` int(11) NOT NULL,
+--   `place` varchar(70) NOT NULL,
+--   `no_yokai` int(11) DEFAULT NULL
+-- ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `wanted_quest`

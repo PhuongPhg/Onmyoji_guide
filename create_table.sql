@@ -27,6 +27,8 @@ CREATE TABLE IF NOT EXISTS wanted_quest(
 CREATE TABLE IF NOT EXISTS soul(
     id INT NOT NULL AUTO_INCREMENT,
     soul_name VARCHAR(20),
+    soul_type VARCHAR(20),
+    combo_1 VARCHAR (150),
     combo_2 VARCHAR(150),
     combo_4 VARCHAR(350),
     PRIMARY KEY(id)
@@ -35,6 +37,7 @@ CREATE TABLE IF NOT EXISTS soul(
 
 CREATE TABLE IF NOT EXISTS guide(
     id_char INT,
+    name_char VARCHAR(20),
     role_char VARCHAR(15),
     id_soul INT,
     soul_name VARCHAR(15),
