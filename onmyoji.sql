@@ -214,9 +214,28 @@ INSERT INTO `characters` (`id`, `characters_name`, `appearance`, `rare`, `skill_
 -- Dumping data for table `guide`
 --
 
--- INSERT INTO `guide` (`id_char`, `name_char`, `role_char`, `id_soul`, `soul_name`, `soul_2`, `soul_4`, `soul_6`) VALUES
--- ()
-
+INSERT INTO `guide` (`id_char`, `name_char`, `role_char`, `soul_name`, `soul_2`, `soul_4`, `soul_6`) VALUES
+(id , 'Kiyohime', 'DMG Amplifier', 'Snow Spirit', 'SPD', 'Effect HIT', 'HP%'),
+(id , 'Bukkuman', 'DMG Amplifier', 'Fortune Cat', 'HP%', 'HP%', 'HP%'),
+(id , 'Ushi no Toki', 'DMG Amplifier', 'Watcher', 'SPD', 'Effect HIT', 'HP%'),
+(id , 'Enmusubi', 'DMG Amplifier', 'Fortune Cat', 'HP%', 'HP%', 'Crit'),
+(id , 'Enmusubi', 'DMG Amplifier', 'Fortune Cat', 'HP%', 'HP%', 'Crit'),
+(id , 'Tamamonomae', 'DPS', 'Shadow', 'ATK%', 'ATK%', 'Crit'),
+(id , 'Ibaraki Doji', 'DPS', 'Shadow', 'ATK%', 'ATK%', 'Crit'),
+(id , 'Inferno Ibaraki Doji', 'DPS', 'Shadow', 'ATK%', 'ATK%', 'Crit'),
+(id , 'Kanihime', 'DPS', 'Shadow', 'ATK%', 'ATK%', 'Crit'),
+(id , 'Kuro Mujou', 'DPS', 'Shadow', 'ATK%', 'ATK%', 'Crit DMG'),
+(id , 'Ootengu', 'DPS', 'Seductress', 'ATK%', 'ATK%', 'Crit'),
+(id , 'Blazing Tamamonomae', 'DPS', 'Seductress', 'ATK%', 'ATK%', 'Crit'),
+(id , 'Jr. Ootengu', 'DPS', 'Seductress', 'ATK%', 'ATK%', 'Crit'),
+(id , 'Zashiki Warashi', 'Orb provider', 'Azure Basan', NULL, NULL, NULL),
+(id , 'Oitsuki', 'Orb provider', 'Fortune Cat', 'SPD', 'HP%', 'HP%'),
+(id , 'Kaguya', 'Orb provider', 'Sea Sprite', 'HP%', 'HP%', 'HP%'),
+(id , 'Yamausagi', 'Puller', 'Fortune Cat', 'SPD', 'HP%', 'HP%'),
+(id , 'Kamaitachi', 'Puller', 'Fortune Cat', 'SPD', 'HP%', 'HP%'),
+(id , 'Sakura', 'Healer', 'Pearl', 'HP%', 'HP%', 'Crit'),
+(id , 'Hiyoribo', 'Healer', 'Tree Spirit', 'HP%', 'HP%', 'Crit'),
+(id , 'Kusa', 'Healer', 'Tree Spirit', 'ATK%', 'ATK%', 'Crit'),
 -- --------------------------------------------------------
 
 --
