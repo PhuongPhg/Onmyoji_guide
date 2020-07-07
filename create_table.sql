@@ -17,6 +17,7 @@ CREATE TABLE IF NOT EXISTS characters(
 );
 CREATE TABLE IF NOT EXISTS wanted_quest(
     id_char INT NOT NULL,
+    hint VARCHAR(50),
     place VARCHAR(70),
     no_yokai INT,
     PRIMARY KEY(id_char, place),
@@ -37,10 +38,8 @@ CREATE TABLE IF NOT EXISTS soul(
 
 CREATE TABLE IF NOT EXISTS guide(
     id_char INT,
-    name_char VARCHAR(20),
     role_char VARCHAR(15),
     id_soul INT,
-    soul_name VARCHAR(15),
     soul_2 VARCHAR(11),
     soul_4 VARCHAR(11),
     soul_6 VARCHAR(11),
