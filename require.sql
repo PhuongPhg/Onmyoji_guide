@@ -17,7 +17,7 @@ WHERE soul.id = guide.id_soul AND guide.id_char =
 SELECT place
 FROM wanted_quest, characters
 WHERE wanted_quest.id_char = characters.id  
-AND characters.characters_name = 'Momo'
+AND characters.characters_name = 'Momo';
 
 -- From specific hints, identify the monster and show places to find
 SELECT characters_name, place 
