@@ -23,6 +23,9 @@ SET time_zone = "+00:00";
 
 -- --------------------------------------------------------
 
+CREATE DATABASE onmyoji;
+USE onmyoji;
+
 --
 -- Table structure for table `characters`
 --
