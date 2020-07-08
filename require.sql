@@ -48,4 +48,6 @@ SELECT soul_name
     WHERE soul_type = 'Boss';
 
 
-
+INSERT INTO characters(characters_name) VALUES ('chalalala');
+SELECT * FROM characters WHERE characters_name = 'chalalala';
+DELETE FROM characters WHERE characters_name = 'chalalala';
